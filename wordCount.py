@@ -1,6 +1,7 @@
 """
 computeStatistics.py es el ejercicio 1
 """
+# pylint: disable=invalid-name
 
 import os
 import sys

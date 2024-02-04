@@ -1,12 +1,12 @@
 """
 computeStatistics.py es el ejercicio 1
 """
+# pylint: disable=invalid-name
 
 import os
 import sys
 import time
 import math
-
 
 def check_scientific_notation(num: float):
     """

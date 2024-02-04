@@ -1,6 +1,7 @@
 """
 convertNumbers.py es el ejercicio 2
 """
+# pylint: disable=invalid-name
 
 import os
 import sys
