@@ -109,6 +109,7 @@ if __name__ == '__main__':
     while not IS_SUCCESSFUL:
         try:
             file = sys.argv[1]
+            del sys.argv[1]
             print(f'Archivo a procesar: {file}')
         except IndexError:
             file = input('Ingrese el nombre del archivo a procesar: ')

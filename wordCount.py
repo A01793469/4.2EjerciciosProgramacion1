@@ -15,6 +15,7 @@ if __name__ == '__main__':
     while not IS_SUCCESSFUL:
         try:
             file = sys.argv[1]
+            del sys.argv[1]
             print(f'Archivo a procesar: {file}')
         except IndexError:
             file = input('Ingrese el nombre del archivo a procesar: ')
@@ -46,8 +47,12 @@ if __name__ == '__main__':
         for word, freq in ordered_count_dict.items():
             OUTPUT_TEXT += f'{word}\t/\t{freq}\n'
             WORDS_SUM += freq
-        OUTPUT_TEXT += f'Total Words: {WORDS_SUM}'
 
+        end_time = time.time_ns()
+        time_delta = end_time - start_time
+
+        OUTPUT_TEXT += f'Total Words: {WORDS_SUM}\n\
+Execution time: {time_delta/1_000_000_000} s'
         print(OUTPUT_TEXT)
 
         with open(out_path, 'w', encoding='utf8') as results:

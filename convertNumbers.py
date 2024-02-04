@@ -160,6 +160,7 @@ if __name__ == '__main__':
     while not IS_SUCCESSFUL:
         try:
             file = sys.argv[1]
+            del sys.argv[1]
             print(f'Archivo a procesar: {file}')
         except IndexError:
             file = input('Ingrese el nombre del archivo a procesar: ')
@@ -221,7 +222,7 @@ if __name__ == '__main__':
 
         print(f'El tiempo de ejecución fue de {time_delta} nanosegundos,\
  equivalente a {time_delta/1_000_000_000} segundos.')
-        OUTPUT_TEXT += 'Execution time: {time_delta/1_000_000_000} s'
+        OUTPUT_TEXT += f'Execution time: {time_delta/1_000_000_000} s'
 
         with open(out_path, 'w', encoding='utf8') as results:
             results.write(OUTPUT_TEXT)
